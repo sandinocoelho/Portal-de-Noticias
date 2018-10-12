@@ -1,5 +1,5 @@
 module.exports = function(application){
-    application.get('/formulario_inclusao_noticia', function(req, res){
+    application.get('/add_noticia', function(req, res){
         application.app.controllers.admin.formulario_inclusao_noticia(application, res, res);
     });
 

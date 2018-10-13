@@ -16,10 +16,12 @@ module.exports.noticia = function(application, req, res){
         
     var NoticiasDAO = new application.app.models.NoticiasDAO(connection);
 
-    NoticiasDAO.getNoticia(function(error, result){
+    var id_noticia = req.query;
+    NoticiasDAO.getNoticia(id_noticia.id_noticia, function(error, result){
         if(error){
             console.log(error);
         }else{
+            console.log(result);
             res.render('noticias/noticia', {noticia : result});
         }
     });
